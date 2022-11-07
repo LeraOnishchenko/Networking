@@ -135,17 +135,17 @@ final class Network<T: Endpoint> {
         return request
     }
     
-    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil, completion: @escaping (Result) -> ()) {
-        let request = makeRequest(method, endpoint, parameters)
-        
-        session.dataTask(with: request) { data, _, error in
-            if let error {
-                completion(.error(error))
-            } else {
-                completion(.data(data))
-            }
-        }.resume()
-    }
+//    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil, completion: @escaping (Result) -> ()) {
+//        let request = makeRequest(method, endpoint, parameters)
+//
+//        session.dataTask(with: request) { data, _, error in
+//            if let error {
+//                completion(.error(error))
+//            } else {
+//                completion(.data(data))
+//            }
+//        }.resume()
+//    }
     
     func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil) async throws -> Data {
         let request = makeRequest(method, endpoint, parameters)

@@ -9,6 +9,18 @@ import UIKit
 
 class DetailsViewController: UIViewController {
 
+    
+    @IBOutlet private weak var cusine: UILabel!
+    @IBOutlet private weak var ingredients: UILabel!
+    @IBOutlet private weak var instruction: UILabel!
+    @IBOutlet private weak var summary: UILabel!
+    @IBOutlet private weak var serving: UILabel!
+    @IBOutlet private weak var dishTitle: UILabel!
+    @IBOutlet private weak var pricePerServing: UILabel!
+    @IBOutlet private weak var cookingMinutes: UILabel!
+    @IBOutlet private weak var preparationMinutes: UILabel!
+    @IBOutlet private weak var vegan: UILabel!
+    @IBOutlet private weak var vegetarian: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 

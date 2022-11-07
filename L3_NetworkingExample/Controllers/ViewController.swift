@@ -28,12 +28,14 @@ class ViewController: UIViewController {
             "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
         ]
         
-        var networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
+//        var networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
+//
+//        Task {
+//            let data = try await networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese"))
+//            print(try! JSONSerialization.jsonObject(with: data!))
+//        }
         
-        Task {
-            let data = try await networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese"))
-            print(try! JSONSerialization.jsonObject(with: data!))
-        }
+        
         
 //        networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese")) { result in
 //            switch result {
@@ -43,22 +45,20 @@ class ViewController: UIViewController {
 //            }
 //        }
         
-//        do {
-//
-//
-//            var networkService = try Network<RecipesEndpoint>(
-//                "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-//                headers: headers
-//            )
-//
-//            Task {
-//                let data = try? await networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese"))
-//
-//                print(try! JSONSerialization.jsonObject(with: data!))
-//            }
-//        } catch {
-//            print(error)
-//        }
+        do {
+            var networkService = try Network<RecipesEndpoint>(
+                "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
+                headers: headers
+            )
+
+            Task {
+                let data = try? await networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese"))
+
+                print(try! JSONSerialization.jsonObject(with: data!))
+            }
+        } catch {
+            print(error)
+        }
     }
 
 }

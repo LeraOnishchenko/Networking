@@ -24,10 +24,10 @@
             </objects>
             <point key="canvasLocation" x="-346" y="-377"/>
         </scene>
-        <!--View Controller-->
+        <!--Table View Controller-->
         <scene sceneID="4ND-fc-y6v">
             <objects>
-                <viewController id="SJC-UW-yil" sceneMemberID="viewController">
+                <viewController id="SJC-UW-yil" customClass="TableViewController" customModule="L3_NetworkingExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="M1V-fD-Tmp">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -49,12 +49,16 @@
                                         <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="SearchRecipes"/>
+                                        <connections>
+                                            <action selector="SearchRecipes:" destination="SJC-UW-yil" eventType="touchUpInside" id="q02-Uz-bzK"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uLX-jX-vHm">
                                         <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="30"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="GuessNutrition"/>
                                         <connections>
+                                            <action selector="GuessNutrition:" destination="SJC-UW-yil" eventType="touchUpInside" id="s53-du-tBq"/>
                                             <segue destination="Vg6-D0-uqd" kind="showDetail" id="4D5-8G-Q9D"/>
                                         </connections>
                                     </button>
@@ -70,7 +74,7 @@
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="629"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dng-mr-FxK">
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="dng-mr-FxK" customClass="TableViewCell" customModule="L3_NetworkingExample" customModuleProvider="target">
                                                 <rect key="frame" x="0.0" y="50" width="393" height="43.666667938232422"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dng-mr-FxK" id="dCr-aF-F1X">
@@ -104,6 +108,7 @@
                                                     </constraints>
                                                 </tableViewCellContentView>
                                                 <connections>
+                                                    <outlet property="dishName" destination="yJr-WY-843" id="NH5-3J-uhm"/>
                                                     <segue destination="Vg6-D0-uqd" kind="show" id="8Mh-KX-gMo"/>
                                                 </connections>
                                             </tableViewCell>
@@ -135,15 +140,18 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="4Kw-Oj-RUV"/>
+                    <connections>
+                        <outlet property="SearchBar" destination="VoK-KK-tsE" id="Sgh-CR-vCy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aoI-Wy-nHO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="555" y="-377"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Details View Controller-->
         <scene sceneID="Dyy-XQ-63Y">
             <objects>
-                <viewController id="Vg6-D0-uqd" customClass="DetailViewController" customModule="L3_NetworkingExample" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Vg6-D0-uqd" customClass="DetailsViewController" customModule="L3_NetworkingExample" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jeg-eR-iyy">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -356,6 +364,19 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="49Z-aT-TnY"/>
+                    <connections>
+                        <outlet property="cookingMinutes" destination="4i9-Vv-tgh" id="r4E-Jd-bx6"/>
+                        <outlet property="cusine" destination="eWN-Uf-QnL" id="zHB-OT-yMs"/>
+                        <outlet property="dishTitle" destination="bqe-YD-Yed" id="wK5-JS-MzV"/>
+                        <outlet property="ingredients" destination="oog-X0-b4N" id="6j3-2W-RXh"/>
+                        <outlet property="instruction" destination="cUH-1V-2DG" id="Y8O-yX-dGc"/>
+                        <outlet property="preparationMinutes" destination="9rs-Ei-w4A" id="Rbv-P6-xFW"/>
+                        <outlet property="pricePerServing" destination="Nbf-OW-R9I" id="drM-yC-Z3k"/>
+                        <outlet property="serving" destination="Hoo-E4-N91" id="QOD-KQ-x0u"/>
+                        <outlet property="summary" destination="0HG-Gw-L2K" id="hnd-Ps-ssb"/>
+                        <outlet property="vegan" destination="QfI-SK-rJp" id="f7w-IL-yyj"/>
+                        <outlet property="vegetarian" destination="CEb-by-3h2" id="oOS-0u-iAy"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="slB-bM-ZJK" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
