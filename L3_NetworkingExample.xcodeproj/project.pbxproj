@@ -19,6 +19,9 @@
 		C18DD2D02919223000600657 /* RecipesQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2CF2919223000600657 /* RecipesQuery.swift */; };
 		C18DD2D22919243400600657 /* RecipeInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D12919243400600657 /* RecipeInformation.swift */; };
 		C18DD2D429192EBC00600657 /* CuisineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D329192EBC00600657 /* CuisineRequest.swift */; };
+		CFC5C56029199B0800178072 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5C55F29199B0800178072 /* TableViewCell.swift */; };
+		CFC5C56229199B2800178072 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5C56129199B2800178072 /* DetailsViewController.swift */; };
+		CFC5C56429199B4900178072 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5C56329199B4900178072 /* TableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,9 @@
 		C18DD2CF2919223000600657 /* RecipesQuery.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesQuery.swift; sourceTree = "<group>"; };
 		C18DD2D12919243400600657 /* RecipeInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformation.swift; sourceTree = "<group>"; };
 		C18DD2D329192EBC00600657 /* CuisineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineRequest.swift; sourceTree = "<group>"; };
+		CFC5C55F29199B0800178072 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		CFC5C56129199B2800178072 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		CFC5C56329199B4900178072 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +76,10 @@
 			children = (
 				C18DD2CC29191FD500600657 /* Models */,
 				874A3190290C0B15007BF552 /* AppDelegate.swift */,
+				CFC5C56129199B2800178072 /* DetailsViewController.swift */,
+				CFC5C55F29199B0800178072 /* TableViewCell.swift */,
 				874A3192290C0B15007BF552 /* SceneDelegate.swift */,
+				CFC5C56329199B4900178072 /* TableViewController.swift */,
 				874A3194290C0B15007BF552 /* ViewController.swift */,
 				874A31A4290C131E007BF552 /* Networking.swift */,
 				874A31A9290C1E75007BF552 /* AlamoNetworking.swift */,
@@ -172,11 +181,14 @@
 				C18DD2D429192EBC00600657 /* CuisineRequest.swift in Sources */,
 				C18DD2D02919223000600657 /* RecipesQuery.swift in Sources */,
 				874A3195290C0B15007BF552 /* ViewController.swift in Sources */,
+				CFC5C56029199B0800178072 /* TableViewCell.swift in Sources */,
 				874A3191290C0B15007BF552 /* AppDelegate.swift in Sources */,
 				C18DD2D22919243400600657 /* RecipeInformation.swift in Sources */,
+				CFC5C56429199B4900178072 /* TableViewController.swift in Sources */,
 				874A3193290C0B15007BF552 /* SceneDelegate.swift in Sources */,
 				874A31A5290C131E007BF552 /* Networking.swift in Sources */,
 				874A31AA290C1E75007BF552 /* AlamoNetworking.swift in Sources */,
+				CFC5C56229199B2800178072 /* DetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
