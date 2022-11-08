@@ -8,11 +8,12 @@
 import UIKit
 
 class TableViewController: UIViewController {
-    let api = API()
+    let apiAlamofire = ApiAlamofire()
+    let apiSession = ApiSesson()
     
     @IBAction func GuessNutrition(_ sender: Any) {
         Task {
-            let data = try? await api.searchNutrition(title: "Spaghetti Aglio et Olio")
+            let data = try? await apiAlamofire.searchNutrition(title: "Spaghetti Aglio et Olio")
             if let data = data {
                 print(data)
             } else {
@@ -22,7 +23,7 @@ class TableViewController: UIViewController {
     }
     @IBAction func SearchRecipes(_ sender: Any) {
             Task {
-                let data = try? await api.searchRecipes(text: "pasta")
+                let data = try? await apiAlamofire.searchRecipes(text: "pasta")
                 if let data = data {
                     print(data)
                 } else {
@@ -37,7 +38,7 @@ class TableViewController: UIViewController {
         super.viewDidLoad()
         
         Task {
-            let data = try? await api.classifyCuisine(ingredientList: "3 oz pork shoulder", title: "Pork roast with green beans")
+            let data = try? await apiAlamofire.classifyCuisine(ingredientList: "3 oz pork shoulder", title: "Pork roast with green beans")
             if let data = data {
                 print(data)
             } else {
@@ -46,7 +47,7 @@ class TableViewController: UIViewController {
         }
         
         Task {
-            let data = try? await api.getRecipeDetails(id: 479101)
+            let data = try? await apiAlamofire.getRecipeDetails(id: 479101)
             if let data = data {
                 print(data)
             } else {

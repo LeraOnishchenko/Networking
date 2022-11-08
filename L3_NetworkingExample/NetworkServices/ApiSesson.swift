@@ -6,6 +6,8 @@
 //
 
 import Foundation
+import Alamofire
+
 
 protocol NetworkRequestBodyConvertible {
     
@@ -79,6 +81,20 @@ struct CuisineClassifyInstruction: NetworkRequestBodyConvertible {
     }
 }
 
+struct RecipeDetailsInstruction: NetworkRequestBodyConvertible {
+    var data: Data? {
+        nil
+    }
+    
+    var queryItems: [URLQueryItem]? {
+        nil
+    }
+    
+    var parameters: [String : Any]? {
+        nil
+    }
+}
+
 protocol Endpoint {
     
     var pathComponent: String { get }
@@ -107,7 +123,7 @@ enum RecipesEndpoint: Endpoint {
     
 }
 
-struct API {
+struct ApiSesson {
     var headers: [String : String]
     var decoder = JSONDecoder()
     var networkService: Network<RecipesEndpoint>
@@ -150,7 +166,7 @@ struct API {
     
     func getRecipeDetails(id: Int) async throws -> RecipeInformationResponse? {
         do {
-            let data = try await self.networkService.perform(.get, .recipeDetails(id))
+            let data = try await self.networkService.perform(.get, .recipeDetails(id), RecipeDetailsInstruction())
             return try decoder.decode(RecipeInformationResponse.self, from: data)
         } catch {
             print(error)
@@ -158,3 +174,57 @@ struct API {
         return nil
     }
 }
+
+
+struct ApiAlamofire {
+    var headers: [String : String]
+    var decoder = JSONDecoder()
+    var networkService: AlamoNetworking<RecipesEndpoint>
+    
+    init() {
+        self.headers = ["X-RapidAPI-Key": "aaad93cf7cmsh83e06d4766f7484p1d12b3jsn60d276eddd06",
+                        "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"]
+        self.networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
+    }
+    
+    func searchRecipes(text: String) async throws -> RecipesQueryResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .searchRecipes, RecipeSearchInstruction(text: text))
+            return try decoder.decode(RecipesQueryResponse.self, from: data!)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    func searchNutrition(title: String) async throws -> NutritionQueryResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .searchNutrition, NutritionSearchInstruction(text: title))
+            return try decoder.decode(NutritionQueryResponse.self, from: data!)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    func classifyCuisine(ingredientList: String, title: String) async throws -> CuisineRequestResponse? {
+        do {
+            let data = try await self.networkService.perform(.post, .classifyCuisine, CuisineClassifyInstruction(title: title, ingredientList: ingredientList))
+            return try decoder.decode(CuisineRequestResponse.self, from: data!)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+    
+    func getRecipeDetails(id: Int) async throws -> RecipeInformationResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .recipeDetails(id), RecipeDetailsInstruction())
+            return try decoder.decode(RecipeInformationResponse.self, from: data!)
+        } catch {
+            print(error)
+        }
+        return nil
+    }
+}
+

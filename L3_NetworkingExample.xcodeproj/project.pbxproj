@@ -16,7 +16,7 @@
 		874A31A8290C1E5F007BF552 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 874A31A7290C1E5F007BF552 /* Alamofire */; };
 		C17B40A3291A5BB500B04859 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A0291A5BB400B04859 /* AlamoNetworking.swift */; };
 		C17B40A4291A5BB500B04859 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A1291A5BB400B04859 /* Networking.swift */; };
-		C17B40A5291A5BB500B04859 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A2291A5BB500B04859 /* API.swift */; };
+		C17B40A5291A5BB500B04859 /* ApiSesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A2291A5BB500B04859 /* ApiSesson.swift */; };
 		C18DD2D02919223000600657 /* RecipesQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2CF2919223000600657 /* RecipesQueryResponse.swift */; };
 		C18DD2D22919243400600657 /* RecipeInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D12919243400600657 /* RecipeInformationResponse.swift */; };
 		C18DD2D429192EBC00600657 /* CuisineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D329192EBC00600657 /* CuisineRequest.swift */; };
@@ -36,7 +36,7 @@
 		874A319E290C0B16007BF552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C17B40A0291A5BB400B04859 /* AlamoNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamoNetworking.swift; path = NetworkServices/AlamoNetworking.swift; sourceTree = "<group>"; };
 		C17B40A1291A5BB400B04859 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = NetworkServices/Networking.swift; sourceTree = "<group>"; };
-		C17B40A2291A5BB500B04859 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = NetworkServices/API.swift; sourceTree = "<group>"; };
+		C17B40A2291A5BB500B04859 /* ApiSesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiSesson.swift; path = NetworkServices/ApiSesson.swift; sourceTree = "<group>"; };
 		C18DD2CF2919223000600657 /* RecipesQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesQueryResponse.swift; sourceTree = "<group>"; };
 		C18DD2D12919243400600657 /* RecipeInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationResponse.swift; sourceTree = "<group>"; };
 		C18DD2D329192EBC00600657 /* CuisineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineRequest.swift; sourceTree = "<group>"; };
@@ -77,7 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				C17B40A0291A5BB400B04859 /* AlamoNetworking.swift */,
-				C17B40A2291A5BB500B04859 /* API.swift */,
+				C17B40A2291A5BB500B04859 /* ApiSesson.swift */,
 				C17B40A1291A5BB400B04859 /* Networking.swift */,
 				CFE0DE7B2919CA820097A6EB /* Controllers */,
 				C18DD2CC29191FD500600657 /* Models */,
@@ -195,7 +195,7 @@
 				C17B40A4291A5BB500B04859 /* Networking.swift in Sources */,
 				CFE0DE7A2919AA5A0097A6EB /* DetailsViewController.swift in Sources */,
 				CFC5C56029199B0800178072 /* TableViewCell.swift in Sources */,
-				C17B40A5291A5BB500B04859 /* API.swift in Sources */,
+				C17B40A5291A5BB500B04859 /* ApiSesson.swift in Sources */,
 				874A3191290C0B15007BF552 /* AppDelegate.swift in Sources */,
 				C18DD2D22919243400600657 /* RecipeInformationResponse.swift in Sources */,
 				CFC5C56429199B4900178072 /* TableViewController.swift in Sources */,
