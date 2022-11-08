@@ -16,7 +16,7 @@ struct Ingredient: Codable {
     var unit: String
 }
 
-struct RecipeInformation: Codable {
+struct RecipeInformationResponse: Codable {
     var vegetarian: Bool
     var vegan: Bool
     var preparationMinutes: Int

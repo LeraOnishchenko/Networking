@@ -25,7 +25,7 @@ struct RecipeQuery: Codable {
     var nutrition: NutritionContainer
 }
 
-struct RecipesQuery: Codable {
+struct RecipesQueryResponse: Codable {
     var results: [RecipeQuery]
 }
 
@@ -35,7 +35,7 @@ struct NutrientsMeasure: Codable {
     var standardDeviation: Double
 }
 
-struct NutritionQuery: Codable {
+struct NutritionQueryResponse: Codable {
     var recipesUsed: Int
     var calories: NutrientsMeasure
     var fat: NutrientsMeasure
