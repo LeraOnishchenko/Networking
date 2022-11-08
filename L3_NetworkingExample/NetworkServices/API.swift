@@ -26,7 +26,9 @@ struct RecipeSearchInstruction: NetworkRequestBodyConvertible {
         "query=\(text)".data(using: .utf8)
     }
     
-    var queryItems: [URLQueryItem]? { nil }
+    var queryItems: [URLQueryItem]? {
+        [URLQueryItem(name: "query",value: text)]
+    }
     
     var parameters: [String : Any]? {
         ["query" : text]
@@ -44,7 +46,9 @@ struct NutritionSearchInstruction: NetworkRequestBodyConvertible {
         "title=\(text)".data(using: .utf8)
     }
     
-    var queryItems: [URLQueryItem]? { nil }
+    var queryItems: [URLQueryItem]? {
+        [URLQueryItem(name: "title", value: text)]
+    }
     
     var parameters: [String : Any]? {
         ["title" : text]
@@ -66,7 +70,9 @@ struct CuisineClassifyInstruction: NetworkRequestBodyConvertible {
         "title=\(title), ingredientList=\(ingredientList)".data(using: .utf8)
     }
     
-    var queryItems: [URLQueryItem]? { nil }
+    var queryItems: [URLQueryItem]? {
+        [URLQueryItem(name: "title", value: title), URLQueryItem(name: "ingredientList", value: ingredientList)]
+    }
     
     var parameters: [String : Any]? {
         ["title": title, "ingredientList": ingredientList]
@@ -107,29 +113,48 @@ struct API {
     var networkService: Network<RecipesEndpoint>
     
     init() {
-        self.headers = ["content-type": "application/x-www-form-urlencoded",
-                        "X-RapidAPI-Key": "aaad93cf7cmsh83e06d4766f7484p1d12b3jsn60d276eddd06",
+        self.headers = ["X-RapidAPI-Key": "aaad93cf7cmsh83e06d4766f7484p1d12b3jsn60d276eddd06",
                         "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"]
         self.networkService = try! Network<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
     }
     
-    func searchRecipes(text: String) async throws -> RecipesQueryResponse {
-        let data = try await self.networkService.perform(.get, .searchRecipes, RecipeSearchInstruction(text: text))
-        return try decoder.decode(RecipesQueryResponse.self, from: data)
+    func searchRecipes(text: String) async throws -> RecipesQueryResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .searchRecipes, RecipeSearchInstruction(text: text))
+            return try decoder.decode(RecipesQueryResponse.self, from: data)
+        } catch {
+            print(error)
+        }
+        return nil
     }
     
-    func searchNutrition(title: String) async throws -> NutritionQueryResponse {
-        let data = try await self.networkService.perform(.get, .searchNutrition, NutritionSearchInstruction(text: title))
-        return try decoder.decode(NutritionQueryResponse.self, from: data)
+    func searchNutrition(title: String) async throws -> NutritionQueryResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .searchNutrition, NutritionSearchInstruction(text: title))
+            return try decoder.decode(NutritionQueryResponse.self, from: data)
+        } catch {
+            print(error)
+        }
+        return nil
     }
     
-    func classifyCuisine(ingredientList: String, title: String) async throws -> CuisineRequestResponse {
-        let data = try await self.networkService.perform(.post, .classifyCuisine, CuisineClassifyInstruction(title: title, ingredientList: ingredientList))
-        return try decoder.decode(CuisineRequestResponse.self, from: data)
+    func classifyCuisine(ingredientList: String, title: String) async throws -> CuisineRequestResponse? {
+        do {
+            let data = try await self.networkService.perform(.post, .classifyCuisine, CuisineClassifyInstruction(title: title, ingredientList: ingredientList))
+            return try decoder.decode(CuisineRequestResponse.self, from: data)
+        } catch {
+            print(error)
+        }
+        return nil
     }
     
-    func getRecipeDetails(id: Int) async throws -> RecipeInformationResponse {
-        let data = try await self.networkService.perform(.get, .recipeDetails(id))
-        return try decoder.decode(RecipeInformationResponse.self, from: data)
+    func getRecipeDetails(id: Int) async throws -> RecipeInformationResponse? {
+        do {
+            let data = try await self.networkService.perform(.get, .recipeDetails(id))
+            return try decoder.decode(RecipeInformationResponse.self, from: data)
+        } catch {
+            print(error)
+        }
+        return nil
     }
 }

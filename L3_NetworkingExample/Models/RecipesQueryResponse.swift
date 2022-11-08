@@ -22,7 +22,7 @@ struct RecipeQuery: Codable {
     var title: String
     var image: String
     var imageType: String
-    var nutrition: NutritionContainer
+    var nutrition: NutritionContainer?
 }
 
 struct RecipesQueryResponse: Codable {
@@ -32,7 +32,6 @@ struct RecipesQueryResponse: Codable {
 struct NutrientsMeasure: Codable {
     var value: Int
     var unit: String
-    var standardDeviation: Double
 }
 
 struct NutritionQueryResponse: Codable {

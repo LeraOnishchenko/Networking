@@ -8,36 +8,51 @@
 import UIKit
 
 class TableViewController: UIViewController {
-
+    let api = API()
+    
     @IBAction func GuessNutrition(_ sender: Any) {
+        Task {
+            let data = try? await api.searchNutrition(title: "Spaghetti Aglio et Olio")
+            if let data = data {
+                print(data)
+            } else {
+                print("Error!")
+            }
+        }
     }
     @IBAction func SearchRecipes(_ sender: Any) {
-        
+            Task {
+                let data = try? await api.searchRecipes(text: "pasta")
+                if let data = data {
+                    print(data)
+                } else {
+                    print("Error!")
+                }
+            }
+            
     }
     
     @IBOutlet weak var SearchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-        let headers = [
-            "content-type": "application/x-www-form-urlencoded",
-            "X-RapidAPI-Key": "986d6faf28msh99d69d453c92914p1200d0jsn52127695f66d",
-            "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-        ]
-        do {
-            var networkService = try Network<RecipesEndpoint>(
-                "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com",
-                headers: headers
-            )
-
-            Task {
-                let data = try? await networkService.perform(.post, .analyzer, RecipeAnalyzeInstruction("Fried potatoe with chicken, onions and cheese"))
-
-                print(try! JSONSerialization.jsonObject(with: data!))
+        
+        Task {
+            let data = try? await api.classifyCuisine(ingredientList: "3 oz pork shoulder", title: "Pork roast with green beans")
+            if let data = data {
+                print(data)
+            } else {
+                print("Error!")
             }
-        } catch {
-            print(error)
         }
-
+        
+        Task {
+            let data = try? await api.getRecipeDetails(id: 479101)
+            if let data = data {
+                print(data)
+            } else {
+                print("Error!")
+            }
+        }
     }
 
 }
