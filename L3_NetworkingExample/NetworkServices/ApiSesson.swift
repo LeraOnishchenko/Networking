@@ -129,7 +129,7 @@ struct ApiSesson {
     var networkService: Network<RecipesEndpoint>
     
     init() {
-        self.headers = ["X-RapidAPI-Key": "aaad93cf7cmsh83e06d4766f7484p1d12b3jsn60d276eddd06",
+        self.headers = ["X-RapidAPI-Key": "986d6faf28msh99d69d453c92914p1200d0jsn52127695f66d",
                         "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"]
         self.networkService = try! Network<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
     }
@@ -182,7 +182,7 @@ struct ApiAlamofire {
     var networkService: AlamoNetworking<RecipesEndpoint>
     
     init() {
-        self.headers = ["X-RapidAPI-Key": "aaad93cf7cmsh83e06d4766f7484p1d12b3jsn60d276eddd06",
+        self.headers = ["X-RapidAPI-Key": "986d6faf28msh99d69d453c92914p1200d0jsn52127695f66d",
                         "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"]
         self.networkService = AlamoNetworking<RecipesEndpoint>("https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com", headers: headers)
     }

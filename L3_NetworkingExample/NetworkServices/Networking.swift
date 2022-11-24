@@ -7,39 +7,6 @@
 
 import Foundation
 
-
-/*
-let headers = [
-    "content-type": "application/x-www-form-urlencoded",
-    "X-RapidAPI-Key": "",
-    "X-RapidAPI-Host": "spoonacular-recipe-food-nutrition-v1.p.rapidapi.com"
-]
-
-let postData = NSMutableData(data: "instructions=Put the garlic in a pan and then add the onion.".data(using: String.Encoding.utf8)!)
-
-let request = NSMutableURLRequest(url: NSURL(string: "https://spoonacular-recipe-food-nutrition-v1.p.rapidapi.com/recipes/analyzeInstructions")! as URL,
-                                        cachePolicy: .useProtocolCachePolicy,
-                                    timeoutInterval: 10.0)
-request.httpMethod = "POST"
-request.allHTTPHeaderFields = headers
-request.httpBody = postData as Data
-
-let session = URLSession.shared
-let dataTask = session.dataTask(with: request as URLRequest, completionHandler: { (data, response, error) -> Void in
-    if (error != nil) {
-        print(error)
-    } else {
-        let httpResponse = response as? HTTPURLResponse
-        print(httpResponse)
-    }
-})
-
-dataTask.resume()
-*/
-
-
-
-
 final class Network<T: Endpoint> {
     
     enum Result {
@@ -93,18 +60,6 @@ final class Network<T: Endpoint> {
         
         return request
     }
-    
-//    func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil, completion: @escaping (Result) -> ()) {
-//        let request = makeRequest(method, endpoint, parameters)
-//
-//        session.dataTask(with: request) { data, _, error in
-//            if let error {
-//                completion(.error(error))
-//            } else {
-//                completion(.data(data))
-//            }
-//        }.resume()
-//    }
     
     func perform(_ method: Method, _ endpoint: T, _ parameters: NetworkRequestBodyConvertible? = nil) async throws -> Data {
         let request = makeRequest(method, endpoint, parameters)

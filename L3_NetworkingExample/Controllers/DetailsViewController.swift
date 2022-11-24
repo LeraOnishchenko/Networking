@@ -21,21 +21,46 @@ class DetailsViewController: UIViewController {
     @IBOutlet private weak var preparationMinutes: UILabel!
     @IBOutlet private weak var vegan: UILabel!
     @IBOutlet private weak var vegetarian: UILabel!
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-    }
     
+    let apiAlamofire = ApiAlamofire()
+    var dish: RecipeQuery!
+    
+    override func viewDidLoad() {
+        var data: RecipeInformationResponse?
+        super.viewDidLoad()
+        var ingridientsString = ""
+        Task {
+            data = try? await apiAlamofire.getRecipeDetails(id: dish.id)
+            if let data = data {
+                print(data)
+                self.vegetarian.text = String(data.vegetarian)
+                self.vegan.text = String(data.vegan)
+                self.preparationMinutes.text = String(data.preparationMinutes)
+                self.cookingMinutes.text = String(data.cookingMinutes)
+                self.pricePerServing.text = String(data.pricePerServing)
+                self.dishTitle.text = data.title
+                self.serving.text = String(data.servings)
+                self.summary.text = data.summary
+                self.instruction.text = data.instructions
+                for i in data.extendedIngredients {
+                    ingridientsString += i.name + " "
+                }
+                self.ingredients.text = ingridientsString
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+            } else {
+                print("Error!")
+            }
+        }
+                Task {
+                    let data = try? await apiAlamofire.classifyCuisine(ingredientList: ingridientsString , title: dishTitle.text!)
+                    if let data = data {
+                        print(data)
+                        self.cusine.text = data.cuisine
+                    } else {
+                        print("Error!")
+                    }
+                }
+        
     }
-    */
 
 }

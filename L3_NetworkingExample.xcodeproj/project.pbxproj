@@ -9,17 +9,18 @@
 /* Begin PBXBuildFile section */
 		874A3191290C0B15007BF552 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A3190290C0B15007BF552 /* AppDelegate.swift */; };
 		874A3193290C0B15007BF552 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A3192290C0B15007BF552 /* SceneDelegate.swift */; };
-		874A3195290C0B15007BF552 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 874A3194290C0B15007BF552 /* ViewController.swift */; };
 		874A3198290C0B15007BF552 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A3196290C0B15007BF552 /* Main.storyboard */; };
 		874A319A290C0B16007BF552 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 874A3199290C0B16007BF552 /* Assets.xcassets */; };
 		874A319D290C0B16007BF552 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 874A319B290C0B16007BF552 /* LaunchScreen.storyboard */; };
 		874A31A8290C1E5F007BF552 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 874A31A7290C1E5F007BF552 /* Alamofire */; };
+		B5AD5DE2053F0FD8AABF969C /* Pods_L3_NetworkingExample.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FE2A4EDB00DCE7248FF2230E /* Pods_L3_NetworkingExample.framework */; };
 		C17B40A3291A5BB500B04859 /* AlamoNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A0291A5BB400B04859 /* AlamoNetworking.swift */; };
 		C17B40A4291A5BB500B04859 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A1291A5BB400B04859 /* Networking.swift */; };
 		C17B40A5291A5BB500B04859 /* ApiSesson.swift in Sources */ = {isa = PBXBuildFile; fileRef = C17B40A2291A5BB500B04859 /* ApiSesson.swift */; };
 		C18DD2D02919223000600657 /* RecipesQueryResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2CF2919223000600657 /* RecipesQueryResponse.swift */; };
 		C18DD2D22919243400600657 /* RecipeInformationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D12919243400600657 /* RecipeInformationResponse.swift */; };
 		C18DD2D429192EBC00600657 /* CuisineRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C18DD2D329192EBC00600657 /* CuisineRequest.swift */; };
+		CF94CA10292FD0F900C44631 /* NutritionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF94CA0F292FD0F900C44631 /* NutritionViewController.swift */; };
 		CFC5C56029199B0800178072 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5C55F29199B0800178072 /* TableViewCell.swift */; };
 		CFC5C56429199B4900178072 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC5C56329199B4900178072 /* TableViewController.swift */; };
 		CFE0DE7A2919AA5A0097A6EB /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE0DE792919AA5A0097A6EB /* DetailsViewController.swift */; };
@@ -29,20 +30,23 @@
 		874A318D290C0B15007BF552 /* L3_NetworkingExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = L3_NetworkingExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		874A3190290C0B15007BF552 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		874A3192290C0B15007BF552 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		874A3194290C0B15007BF552 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		874A3197290C0B15007BF552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		874A3199290C0B16007BF552 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		874A319C290C0B16007BF552 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		874A319E290C0B16007BF552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8C5A544F48E2C4FE682CCCAC /* Pods-L3_NetworkingExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L3_NetworkingExample.debug.xcconfig"; path = "Target Support Files/Pods-L3_NetworkingExample/Pods-L3_NetworkingExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C17B40A0291A5BB400B04859 /* AlamoNetworking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlamoNetworking.swift; path = NetworkServices/AlamoNetworking.swift; sourceTree = "<group>"; };
 		C17B40A1291A5BB400B04859 /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Networking.swift; path = NetworkServices/Networking.swift; sourceTree = "<group>"; };
 		C17B40A2291A5BB500B04859 /* ApiSesson.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ApiSesson.swift; path = NetworkServices/ApiSesson.swift; sourceTree = "<group>"; };
 		C18DD2CF2919223000600657 /* RecipesQueryResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesQueryResponse.swift; sourceTree = "<group>"; };
 		C18DD2D12919243400600657 /* RecipeInformationResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeInformationResponse.swift; sourceTree = "<group>"; };
 		C18DD2D329192EBC00600657 /* CuisineRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CuisineRequest.swift; sourceTree = "<group>"; };
+		CBB9527E8195AD84F4FB40E4 /* Pods-L3_NetworkingExample.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-L3_NetworkingExample.release.xcconfig"; path = "Target Support Files/Pods-L3_NetworkingExample/Pods-L3_NetworkingExample.release.xcconfig"; sourceTree = "<group>"; };
+		CF94CA0F292FD0F900C44631 /* NutritionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NutritionViewController.swift; sourceTree = "<group>"; };
 		CFC5C55F29199B0800178072 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		CFC5C56329199B4900178072 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		CFE0DE792919AA5A0097A6EB /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		FE2A4EDB00DCE7248FF2230E /* Pods_L3_NetworkingExample.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_L3_NetworkingExample.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,37 @@
 			buildActionMask = 2147483647;
 			files = (
 				874A31A8290C1E5F007BF552 /* Alamofire in Frameworks */,
+				B5AD5DE2053F0FD8AABF969C /* Pods_L3_NetworkingExample.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		06AB0559083EE1DEC2B68ED8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8C5A544F48E2C4FE682CCCAC /* Pods-L3_NetworkingExample.debug.xcconfig */,
+				CBB9527E8195AD84F4FB40E4 /* Pods-L3_NetworkingExample.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		80EEC67613FC3EA8A800178C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FE2A4EDB00DCE7248FF2230E /* Pods_L3_NetworkingExample.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		874A3184290C0B15007BF552 = {
 			isa = PBXGroup;
 			children = (
 				874A318F290C0B15007BF552 /* L3_NetworkingExample */,
 				874A318E290C0B15007BF552 /* Products */,
+				06AB0559083EE1DEC2B68ED8 /* Pods */,
+				80EEC67613FC3EA8A800178C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -83,7 +107,6 @@
 				C18DD2CC29191FD500600657 /* Models */,
 				874A3190290C0B15007BF552 /* AppDelegate.swift */,
 				874A3192290C0B15007BF552 /* SceneDelegate.swift */,
-				CFC5C55F29199B0800178072 /* TableViewCell.swift */,
 				874A3196290C0B15007BF552 /* Main.storyboard */,
 				874A3199290C0B16007BF552 /* Assets.xcassets */,
 				874A319B290C0B16007BF552 /* LaunchScreen.storyboard */,
@@ -106,8 +129,9 @@
 			isa = PBXGroup;
 			children = (
 				CFC5C56329199B4900178072 /* TableViewController.swift */,
-				874A3194290C0B15007BF552 /* ViewController.swift */,
+				CFC5C55F29199B0800178072 /* TableViewCell.swift */,
 				CFE0DE792919AA5A0097A6EB /* DetailsViewController.swift */,
+				CF94CA0F292FD0F900C44631 /* NutritionViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -119,9 +143,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 874A31A1290C0B16007BF552 /* Build configuration list for PBXNativeTarget "L3_NetworkingExample" */;
 			buildPhases = (
+				E34618C9AB2DB4043EF2B223 /* [CP] Check Pods Manifest.lock */,
 				874A3189290C0B15007BF552 /* Sources */,
 				874A318A290C0B15007BF552 /* Frameworks */,
 				874A318B290C0B15007BF552 /* Resources */,
+				4E620680F133F4697E825386 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -184,6 +210,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E620680F133F4697E825386 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-L3_NetworkingExample/Pods-L3_NetworkingExample-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-L3_NetworkingExample/Pods-L3_NetworkingExample-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-L3_NetworkingExample/Pods-L3_NetworkingExample-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E34618C9AB2DB4043EF2B223 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-L3_NetworkingExample-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		874A3189290C0B15007BF552 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -191,7 +259,6 @@
 			files = (
 				C18DD2D429192EBC00600657 /* CuisineRequest.swift in Sources */,
 				C18DD2D02919223000600657 /* RecipesQueryResponse.swift in Sources */,
-				874A3195290C0B15007BF552 /* ViewController.swift in Sources */,
 				C17B40A4291A5BB500B04859 /* Networking.swift in Sources */,
 				CFE0DE7A2919AA5A0097A6EB /* DetailsViewController.swift in Sources */,
 				CFC5C56029199B0800178072 /* TableViewCell.swift in Sources */,
@@ -201,6 +268,7 @@
 				CFC5C56429199B4900178072 /* TableViewController.swift in Sources */,
 				874A3193290C0B15007BF552 /* SceneDelegate.swift in Sources */,
 				C17B40A3291A5BB500B04859 /* AlamoNetworking.swift in Sources */,
+				CF94CA10292FD0F900C44631 /* NutritionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,12 +410,13 @@
 		};
 		874A31A2290C0B16007BF552 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8C5A544F48E2C4FE682CCCAC /* Pods-L3_NetworkingExample.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2PKVZCQ5NM;
+				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = L3_NetworkingExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -370,12 +439,13 @@
 		};
 		874A31A3290C0B16007BF552 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBB9527E8195AD84F4FB40E4 /* Pods-L3_NetworkingExample.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 2PKVZCQ5NM;
+				DEVELOPMENT_TEAM = VNU8KKW4GG;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = L3_NetworkingExample/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
