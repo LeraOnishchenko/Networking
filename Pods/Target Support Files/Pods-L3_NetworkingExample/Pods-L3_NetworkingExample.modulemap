@@ -1,0 +1,6 @@
+framework module Pods_L3_NetworkingExample {
+  umbrella header "Pods-L3_NetworkingExample-umbrella.h"
+
+  export *
+  module * { export * }
+}
