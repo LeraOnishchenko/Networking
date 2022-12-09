@@ -26,13 +26,11 @@ class DetailsViewController: UIViewController {
     var dish: RecipeQuery!
     
     override func viewDidLoad() {
-        var data: RecipeInformationResponse?
         super.viewDidLoad()
         var ingridientsString = ""
         Task {
-            data = try? await apiAlamofire.getRecipeDetails(id: dish.id)
-            if let data = data {
-                print(data)
+            do {
+                let data = try await apiAlamofire.getRecipeDetails(id: dish.id)
                 self.vegetarian.text = String(data.vegetarian)
                 self.vegan.text = String(data.vegan)
                 self.preparationMinutes.text = String(data.preparationMinutes)
@@ -46,20 +44,19 @@ class DetailsViewController: UIViewController {
                     ingridientsString += i.name + " "
                 }
                 self.ingredients.text = ingridientsString
-
-            } else {
+            } catch {
+                print("\(error)")
+            }
+        }
+        Task {
+            do {
+                let data = try await apiAlamofire.classifyCuisine(ingredientList: ingridientsString , title: dishTitle.text!)
+                print(data)
+                self.cusine.text = data.cuisine
+            } catch {
                 print("Error!")
             }
         }
-                Task {
-                    let data = try? await apiAlamofire.classifyCuisine(ingredientList: ingridientsString , title: dishTitle.text!)
-                    if let data = data {
-                        print(data)
-                        self.cusine.text = data.cuisine
-                    } else {
-                        print("Error!")
-                    }
-                }
         
     }
 

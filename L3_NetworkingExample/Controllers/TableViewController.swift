@@ -34,13 +34,13 @@ class TableViewController: UIViewController, UITableViewDelegate {
     }
     func searchDishRecipes(){
         Task {
-            let data = try? await apiAlamofire.searchRecipes(text: searchText)
-            if let data = data {
+            do {
+                let data = try await apiAlamofire.searchRecipes(text: searchText)
                 print(data)
                 searchRecipes = data
                 dishTable.reloadData()
-            } else {
-                print("Error!")
+            } catch {
+                print("\(error.localizedDescription)")
             }
         }
     }

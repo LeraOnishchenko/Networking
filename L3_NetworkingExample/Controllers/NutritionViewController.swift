@@ -19,19 +19,17 @@ class NutritionViewController: UIViewController {
         print(dishTitle)
         print("hello")
         Task {
-                    let data = try? await apiAlamofire.searchNutrition(title: dishTitle)
-                            if let data = data {
-                                print(data)
-                                self.calories.text = String(data.calories.value)
-                                self.carbs.text = String(data.carbs.value)
-                                self.protein.text = String(data.protein.value)
-                                self.fat.text = String(data.fat.value)
-                            } else {
-                                print("Error!")
-                            }
-                        }
-        
-        
+            do {
+                let data = try await apiAlamofire.searchNutrition(title: dishTitle)
+                print(data)
+                self.calories.text = String(data.calories.value)
+                self.carbs.text = String(data.carbs.value)
+                self.protein.text = String(data.protein.value)
+                self.fat.text = String(data.fat.value)
+            }
+            catch {
+                print("\(error.localizedDescription)")
+            }
+        }
     }
-
 }
